@@ -1,6 +1,3 @@
-import { strict } from 'assert';
-
-//
 // This is only a SKELETON file for the 'Protein Translation' exercise. It's been provided as a
 // convenience to get you started writing code faster.
 //
@@ -16,7 +13,7 @@ export const translate = str => {
   }
   let validateArray = [];
   // construct array of all possible and valid codons
-  proteins.forEach((protein, i) => {
+  proteins.forEach((protein) => {
     validateArray.push(protein.codons);
   });
   // flatten array of arrays
@@ -25,13 +22,18 @@ export const translate = str => {
   // loop through codons and proteins and push into names array
   codons.forEach(cod => {
     // check if codon string has an invalid codon
-    if (!validateArray.includes(cod)) throw new Error('Invalid codon');
+    
+    if (!validateArray.includes(cod)) names.push('INVALID')
+    
     proteins.forEach(protein => {
       if (protein.codons.includes(cod)) {
         names.push(protein.name);
       }
     });
   });
+
+  if(names.includes('INVALID') && !names.includes('STOP')) throw new Error('Invalid codon')
+
   //slice array if it has the 'STOP name
   const nameArray =
     names.indexOf('STOP') !== -1
