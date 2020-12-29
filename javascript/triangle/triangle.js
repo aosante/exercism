@@ -1,9 +1,7 @@
-import { threadId } from 'worker_threads';
-
-//
 // This is only a SKELETON file for the 'Triangle' exercise. It's been provided as a
 // convenience to get you started writing code faster.
-//
+
+// Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
 
 export class Triangle {
   constructor(side1, side2, side3) {
@@ -12,7 +10,7 @@ export class Triangle {
     this.side3 = side3;
   }
 
-  validateInequality() {
+  get validateInequality() {
     if (
       this.side1 + this.side2 < this.side3 ||
       this.side1 + this.side3 < this.side2 ||
@@ -24,7 +22,7 @@ export class Triangle {
     }
   }
 
-  validateSides() {
+  get validateSides() {
     if (this.side1 <= 0 || this.side2 <= 0 || this.side3 <= 0) {
       return false;
     } else {
@@ -32,9 +30,9 @@ export class Triangle {
     }
   }
 
-  isEquilateral() {
-    const isValid = this.validateInequality();
-    const sidesAreValid = this.validateSides();
+  get isEquilateral() {
+    const isValid = this.validateInequality;
+    const sidesAreValid = this.validateSides;
     if (!isValid) return false;
     if (!sidesAreValid) return false;
     if (
@@ -48,9 +46,9 @@ export class Triangle {
     }
   }
 
-  isIsosceles() {
-    const isValid = this.validateInequality();
-    const sidesAreValid = this.validateSides();
+  get isIsosceles() {
+    const isValid = this.validateInequality;
+    const sidesAreValid = this.validateSides;
     if (!isValid) return false;
     if (!sidesAreValid) return false;
     if (
@@ -64,9 +62,9 @@ export class Triangle {
     }
   }
 
-  isScalene() {
-    const isValid = this.validateInequality();
-    const sidesAreValid = this.validateSides();
+  get isScalene() {
+    const isValid = this.validateInequality;
+    const sidesAreValid = this.validateSides;
     if (!isValid) return false;
     if (!sidesAreValid) return false;
     if (
