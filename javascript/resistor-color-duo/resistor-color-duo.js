@@ -3,10 +3,11 @@
 // convenience to get you started writing code faster.
 //
 
-export const decodedValue = colorArray => {
-  const firstDigit = COLORS.indexOf(colorArray[0]);
-  const secondDigit = COLORS.indexOf(colorArray[1]);
-  return parseInt(`${firstDigit}${secondDigit}`);
+export const decodedValue = ([color1, color2]) => {
+  const firstDigit = COLORS.indexOf(color1);
+  const secondDigit = COLORS.indexOf(color2);
+  // using math instead of parseInt
+  return firstDigit * 10 + secondDigit
 };
 
 export const COLORS = [
