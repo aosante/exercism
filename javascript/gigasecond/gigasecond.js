@@ -4,7 +4,8 @@
 //
 
 export const gigasecond = date => {
-  const startingTime = date.getTime() / 1000; //gives you time in seconds
-  const endDate = new Date((startingTime + Math.pow(10, 9)) * 1000); // Date constructor needs to have time back in miliseconds
-  return endDate;
-};
+    // gigasecond is the same as 10^9 seconds, or 10^12 miliiseconds
+    const GIGASECOND_IN_MS = 10 ** 12, startingTime = date.getTime();
+    const endDate = new Date(startingTime + GIGASECOND_IN_MS)
+    return endDate
+}
