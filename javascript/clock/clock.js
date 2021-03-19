@@ -1,5 +1,3 @@
-// This is only a SKELETON file for the 'Clock' exercise. It's been provided as a
-// convenience to get you started writing code faster.
 export class Clock {
   constructor(hours = 0, minutes = 0) {
     // the first argument of setHours() is ideally, an integer between 0 and 23, representing the hour.
