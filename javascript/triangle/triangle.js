@@ -4,77 +4,29 @@
 // Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
 
 export class Triangle {
-  constructor(side1, side2, side3) {
-    this.side1 = side1;
-    this.side2 = side2;
-    this.side3 = side3;
+  constructor(...sides) {
+    this.sides = sides
   }
 
-  get validateInequality() {
-    if (
-      this.side1 + this.side2 < this.side3 ||
-      this.side1 + this.side3 < this.side2 ||
-      this.side2 + this.side3 < this.side1
-    ) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  get validateSides() {
-    if (this.side1 <= 0 || this.side2 <= 0 || this.side3 <= 0) {
-      return false;
-    } else {
-      return true;
-    }
+  isValidTriangle() {
+    const [side1, side2, side3] = this.sides.sort((a, b) => a - b)
+    const hasPositiveSides = this.sides.every((side) => side > 0)
+    const hasValidInequality = side1 + side2 >= side3
+    return this.sides.length === 3 && hasPositiveSides && hasValidInequality
   }
 
   get isEquilateral() {
-    const isValid = this.validateInequality;
-    const sidesAreValid = this.validateSides;
-    if (!isValid) return false;
-    if (!sidesAreValid) return false;
-    if (
-      this.side1 === this.side2 &&
-      this.side2 === this.side3 &&
-      this.side1 === this.side3
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+    // since all sides are the same, the set should remove duplicates and remain with only one value
+    return this.isValidTriangle() && new Set(this.sides).size === 1
   }
 
   get isIsosceles() {
-    const isValid = this.validateInequality;
-    const sidesAreValid = this.validateSides;
-    if (!isValid) return false;
-    if (!sidesAreValid) return false;
-    if (
-      this.side1 === this.side2 ||
-      this.side2 === this.side3 ||
-      this.side1 === this.side3
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+    // since there are two side that are equal, the set should remove duplicates and remain with two sides or less (since equilateral triangles are also isosceles)
+    return this.isValidTriangle() && new Set(this.sides).size < 3
   }
 
   get isScalene() {
-    const isValid = this.validateInequality;
-    const sidesAreValid = this.validateSides;
-    if (!isValid) return false;
-    if (!sidesAreValid) return false;
-    if (
-      this.side1 !== this.side2 &&
-      this.side2 !== this.side3 &&
-      this.side1 !== this.side3
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+    // al sizes are different and unique, so the Set's size should remain 3
+    return this.isValidTriangle() && new Set(this.sides).size === 3
   }
 }
