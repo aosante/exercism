@@ -3,32 +3,34 @@ export class Clock {
     // the first argument of setHours() is ideally, an integer between 0 and 23, representing the hour.
     // If a value greater than 23 is provided, the datetime will be incremented by the extra hours.
     // (same thing happens for minutes) => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours
-    this.time = new Date();
-    this.time.setHours(hours);
-    this.time.setMinutes(minutes);
+    this.minutes = minutes + hours * 60
   }
 
   setTwoDigits(value) {
-    return value.toString().padStart(2, '0');
+    return value.toString().padStart(2, '0')
+  }
+
+  getHours() {
+    const hours = Math.floor(this.minutes / 60)
+    return this.setTwoDigits(((hours % 24) + 24) % 24)
+  }
+
+  getMinutes() {
+    return this.setTwoDigits(((this.minutes % 60) + 60) % 60)
   }
 
   toString() {
-    return `${this.setTwoDigits(this.time.getHours())}:${this.setTwoDigits(
-      this.time.getMinutes()
-    )}`;
+    return `${this.getHours()}:${this.getMinutes()}`
   }
-
-  plus(minutes = 0) {
-    this.time.setMinutes(minutes + this.time.getMinutes());
-    return this;
+  plus(minutes) {
+    this.minutes += minutes
+    return this
   }
-
-  minus(minutes = 0) {
-    this.time.setMinutes(this.time.getMinutes() - minutes);
-    return this;
+  minus(minutes) {
+    this.minutes -= minutes
+    return this
   }
-
-  equals(otherTime) {
-    return this.toString() === otherTime.toString();
+  equals(clock) {
+    return this.toString() == clock.toString()
   }
 }
