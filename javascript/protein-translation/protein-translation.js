@@ -22,9 +22,9 @@
 //   // loop through codons and proteins and push into names array
 //   codons.forEach(cod => {
 //     // check if codon string has an invalid codon
-    
+
 //     if (!validateArray.includes(cod)) names.push('INVALID')
-    
+
 //     proteins.forEach(protein => {
 //       if (protein.codons.includes(cod)) {
 //         names.push(protein.name);
@@ -55,25 +55,32 @@
 
 // SOLUTION 2
 const codonMap = {
-    AUG: 'Methionine',
-    UUU: 'Phenylalanine', UUC: 'Phenylalanine',
-    UUA: 'Leucine', UUG: 'Leucine',
-    UCU: 'Serine', UCC: 'Serine', UCA: 'Serine', UCG: 'Serine',
-    UAU: 'Tyrosine', UAC: 'Tyrosine',
-    UGU: 'Cysteine', UGC: 'Cysteine',
-    UGG: 'Tryptophan',
-    UAA: 'STOP', UAG: 'STOP', UGA: 'STOP' 
-};
+  Methionine: ['AUG'],
+  Phenylalanine: ['UUU', 'UUC'],
+  Leucine: ['UUA', 'UUG'],
+  Serine: ['UCU', 'UCC', 'UCA', 'UCG'],
+  Tyrosine: ['UAU', 'UAC'],
+  Cysteine: ['UGU', 'UGC'],
+  Tryptophan: ['UGG'],
+  STOP: ['UAA', 'UAG', 'UGA'],
+}
 
-export const translate = str => {
-  if(!str) return [];
-  let namesArray = [];
+const findProtein = (codon) => {
+  for (const codonName in codonMap) {
+    if (codonMap[codonName].includes(codon)) return codonName
+  }
+  return
+}
+
+export const translate = (str) => {
+  if (!str) return []
+  let namesArray = []
   // regex splits string into array of 3 character strings e.g 'UUUUUA' => ['UUU', UUUA]
   // https://stackoverflow.com/questions/6259515/how-can-i-split-a-string-into-segments-of-n-characters
   for (const codon of str.match(/(.{1,3})/g)) {
-    let protein = codonMap[codon];
-    if(!protein) throw new Error('Invalid codon')
-    if(protein === 'STOP') break;
+    let protein = findProtein(codon)
+    if (!protein) throw new Error('Invalid codon')
+    if (protein === 'STOP') break
     namesArray.push(protein)
   }
 
