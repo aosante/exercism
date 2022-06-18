@@ -1,0 +1,28 @@
+{
+  "name": "@exercism/javascript-lasagna",
+  "description": "Exercism concept exercise on basics",
+  "author": "Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exercism/javascript",
+    "directory": "exercises/concept/lasagna"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@exercism/babel-preset-javascript": "^0.1.2",
+    "@exercism/eslint-config-javascript": "^0.6.0",
+    "@types/jest": "^28.1.1",
+    "@types/node": "^16.11.39",
+    "babel-jest": "^28.1.1",
+    "core-js": "^3.23.0",
+    "eslint": "^8.17.0",
+    "jest": "^28.1.1"
+  },
+  "scripts": {
+    "test": "jest ./*",
+    "watch": "jest --watch ./*",
+    "lint": "eslint ."
+  }
+}
