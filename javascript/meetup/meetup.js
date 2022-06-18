@@ -31,6 +31,7 @@ export const meetup = (year, month, nth, day) =>  {
    // meetupDays stores all the dates of the month for the passed in day e.g. all Mondays in that month
    let meetupDays = [];
    [...Array(numberOfDaysInMonth).keys()].forEach((dayIndex) => {
+    // wee add one to the day because 0 is the last date of the month i.e 30 or 31
      if (new Date(year, month - 1, dayIndex + 1).getDay() === weekdays.indexOf(day)) {
       meetupDays.push(dayIndex + 1)
      }
