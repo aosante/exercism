@@ -4,7 +4,7 @@
 //
 
 export const score = () => {
-  // 1. create an object that maps letters to values
+  // 1. create an object that maps letters to values.
   // const letterValues = {
   //   a: 1,e: 1,i: 1,l: 1,n: 1,o: 1,r: 1,s: 1,t: 1,u: 1,
   //   d: 2,g: 2,
