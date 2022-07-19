@@ -1,6 +1,6 @@
 # Exercism
 
-My solutions to some Exercises in exercism.io 📚
+My solutions to exercises from exercism.io 📚
 
 Currently working on the JavaScript track.
 
