@@ -1,6 +1,8 @@
 # Exercism
 
-My solutions to the JavaScript track exercises in exercism.io 📚
+My solutions to some Exercises in exercism.io 📚
+
+Currently working on the JavaScript track.
 
 Similar to HackerRank or AlgoExpert, [Exercism](https://exercism.io/) is a site to develop skills in Data Structures and Algorithms.
 
