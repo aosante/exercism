@@ -1,15 +1,8 @@
 class Attendee
+  attr_reader :height, :pass_id
+
   def initialize(height)
     @height = height
-    @pass_id = nil
-  end
-
-  def height
-    return @height
-  end
-
-  def pass_id
-    return @pass_id
   end
 
   def issue_pass!(pass_id)
