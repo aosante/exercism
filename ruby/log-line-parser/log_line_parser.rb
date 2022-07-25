@@ -1,7 +1,6 @@
 class LogLineParser
   attr_reader :log_level,
-              :message,
-              :reformat
+              :message
 
   def initialize(line)
     message_groups = /\[(?<log_level>[A-Z]+)\]:\s+(?<message>.+)/.match(line)
