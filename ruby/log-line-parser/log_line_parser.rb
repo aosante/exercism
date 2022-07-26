@@ -3,10 +3,6 @@ class LogLineParser
   REPORT = '%<message>s (%<log_level>s)'
   private_constant :LINE_REGEX, :REPORT
 
-  attr_reader :log_level,
-              :message,
-              :report
-
   def initialize(line, report = REPORT)
     message_groups = LINE_REGEX.match(line)
 
@@ -15,7 +11,18 @@ class LogLineParser
     @report = report
   end
 
+  private
+
+  attr_reader :report
+
+  public
+
+  attr_reader :log_level,
+              :message
+
   def reformat()
     report % { message: message, log_level: log_level }
   end
+
+  alias to_s reformat
 end
