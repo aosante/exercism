@@ -1,8 +1,8 @@
 
-const isYelling = (message) => /[a-z]/i.test(message) && message.toUpperCase() === message // -> 'Whoa, chill out!'
-const isQuestion = (message) => message.endsWith('?') // -> 'Sure.'
-const isYellingQuestion = (message) => isYelling(message) && isQuestion(message) // -> 'Calm down, I know what I'm doing!'
-const isQuiet = (message) => message.length === 0 // -> 'Fine. Be that way!'
+const isYelling = (message) => /[a-z]/i.test(message) && message.toUpperCase() === message
+const isQuestion = (message) => message.endsWith('?')
+const isYellingQuestion = (message) => isYelling(message) && isQuestion(message)
+const isQuiet = (message) => message.length === 0
 
 const responseList = [
   { messageTest: isYellingQuestion, messageResponse: 'Calm down, I know what I\'m doing!'},
@@ -13,7 +13,7 @@ const responseList = [
 
 /**
  * Returns Bob's response based on the message provided
- * @param {string} message 
+ * @param {string} message
  * @returns {string} bob's response to message
  */
 export const hey = (message) => {
