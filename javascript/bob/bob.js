@@ -1,5 +1,7 @@
 
-const isYelling = (message) => /[a-z]/i.test(message) && message.toUpperCase() === message
+const ALPHABETIC_REGEX = /[a-z]/i
+
+const isYelling = (message) => ALPHABETIC_REGEX.test(message) && message.toUpperCase() === message
 const isQuestion = (message) => message.endsWith('?')
 const isYellingQuestion = (message) => isYelling(message) && isQuestion(message)
 const isQuiet = (message) => message.length === 0
