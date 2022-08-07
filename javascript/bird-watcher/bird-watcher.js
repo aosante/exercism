@@ -33,15 +33,11 @@ export const birdsInWeek = (birdsPerDay, week) => {
  * @returns {number[]} corrected bird count data
  */
 export const fixBirdCountLog = (birdsPerDay) => {
-  for (const day of birdsPerDay.keys()) {
-    if (day % 2 === 0) birdsPerDay[day]++
-  }
-
+  birdsPerDay.forEach((_, i) =>  i % 2 === 0 && birdsPerDay[i]++)
   return birdsPerDay
 }
 
 // Utils
-
 /**
  * 
  * @param {any[]} arr 
