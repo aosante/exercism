@@ -60,7 +60,7 @@ describe('limesToCut', () => {
   })
 })
 
-describe.skip('remainingOrders', () => {
+describe('remainingOrders', () => {
   test('correctly determines the remaining orders', () => {
     const orders = [
       'Tropical Island',
