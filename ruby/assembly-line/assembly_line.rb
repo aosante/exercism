@@ -1,5 +1,7 @@
 class AssemblyLine
   CAR_PER_HOUR = 221
+  private_constant :CAR_PER_HOUR
+  
   def initialize(speed)
     @speed = speed
   end
