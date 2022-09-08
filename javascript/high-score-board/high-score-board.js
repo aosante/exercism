@@ -30,7 +30,9 @@ export const addPlayer = (scoreBoard, player, score) => {
  * @returns {Record<string, number>} updated score board
  */
 export const removePlayer = (scoreBoard, player) => {
-  throw new Error('Please implement the removePlayer function')
+  if (scoreBoard[player]) delete scoreBoard[player]
+
+  return scoreBoard
 }
 
 /**
@@ -42,7 +44,9 @@ export const removePlayer = (scoreBoard, player) => {
  * @returns {Record<string, number>} updated score board
  */
 export const updateScore = (scoreBoard, player, points) => {
-  throw new Error('Please implement the updateScore function')
+  scoreBoard[player] += points
+
+  return scoreBoard
 }
 
 /**
@@ -52,7 +56,11 @@ export const updateScore = (scoreBoard, player, points) => {
  * @returns {Record<string, number>} updated score board
  */
 export const applyMondayBonus = (scoreBoard) => {
-  throw new Error('Please implement the applyMondayBonus function')
+  for (const player in scoreBoard) {
+    scoreBoard[player] += 100
+  }
+
+  return scoreBoard
 }
 
 /**
@@ -61,6 +69,5 @@ export const applyMondayBonus = (scoreBoard) => {
  * @param {Params} params the parameters for performing the normalization
  * @returns {number} normalized score
  */
-export const normalizeScore = (params) => {
-  throw new Error('Please implement the normalizeScore function')
-}
+export const normalizeScore = ({ score, normalizeFunction }) =>
+  normalizeFunction(score)
