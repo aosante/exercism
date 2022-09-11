@@ -56,5 +56,7 @@ export const simpleTicketStatus = (tickets, ticketId) =>
  * @returns {string | undefined} version
  */
 export const gtcVersion = (visitor) => {
-  throw new Error('Please implement the gtcVersion function.')
+  if (!visitor.gtc?.version) return
+
+  return visitor.gtc.version
 }
