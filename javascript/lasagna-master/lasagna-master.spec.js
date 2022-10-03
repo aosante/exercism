@@ -156,7 +156,7 @@ describe('addSecretIngredient', () => {
   })
 })
 
-describe.skip('scaleRecipe', () => {
+describe('scaleRecipe', () => {
   test('scales up correctly', () => {
     const recipe1 = {
       sauce: 0.5,

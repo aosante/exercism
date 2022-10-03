@@ -55,3 +55,18 @@ export const quantities = (layers) => {
 export const addSecretIngredient = (friendsList, myList) => {
   myList.push(friendsList[friendsList.length - 1])
 }
+
+/**
+ * Calculates the amounts for different numbers of portions
+ * @param {object} recipe
+ * @param {number} numberOfPortions
+ * @returns {object} a recipe object with the amounts needed for the desired number of portions
+ */
+export const scaleRecipe = (recipe, numberOfPortions) => {
+  const amounts = {}
+  for (const [ingredient, amount] of Object.entries(recipe)) {
+    amounts[ingredient] = amount * (numberOfPortions / 2)
+  }
+
+  return amounts
+}
