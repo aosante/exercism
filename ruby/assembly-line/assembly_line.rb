@@ -30,6 +30,6 @@ class AssemblyLine
   end
 
   def working_items_per_minute
-    raise 'Please implement the AssemblyLine#working_items_per_minute method'
+    (production_rate_per_hour / 60).floor
   end
 end
