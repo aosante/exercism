@@ -49,7 +49,7 @@ describe('graduationFor', () => {
   })
 })
 
-describe.skip('costOf', () => {
+describe('costOf', () => {
   test('sign is total of characters followed by the currency', () => {
     const sign = 'Happy Birthday!'
     const expected = 'Your sign costs 50.00 dollars.'

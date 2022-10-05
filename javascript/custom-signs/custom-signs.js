@@ -50,6 +50,5 @@ Class of ${year}`
  * @returns {string} cost to create the sign
  */
 
-export const costOf = (sign, currency) => {
-  throw new Error('Implement the costOf function')
-}
+export const costOf = (sign, currency) =>
+  `Your sign costs ${(20 + sign.length * 2).toFixed(2)} ${currency}.`
