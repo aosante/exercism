@@ -9,22 +9,12 @@
 //
 // In your own projects, files, and code, you can play with @ts-check as well.
 
-import { notify } from './notifier';
-import { order } from './grocer';
+import { notify } from './notifier'
+import { order } from './grocer'
 
-/**
- * @return void
- */
-export function onSuccess() {
-  // implement the onSuccess callback to call notify with a success message
-}
+export const onSuccess = () => notify({ message: 'SUCCESS' })
 
-/**
- * @return void
- */
-export function onError() {
-  // implement the onError callback to call notify with an error message
-}
+export const onError = () => notify({ message: 'ERROR' })
 
 /**
  * @param {GrocerQuery} query
@@ -32,15 +22,15 @@ export function onError() {
  * @param {FruitPickerErrorCallback} onErrorCallback
  * @return void
  */
-export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
-  // implement the orderFromGrocer function to order the query
-}
+// implement the orderFromGrocer function to order the query
+export const orderFromGrocer = (query, onSuccessCallback, onErrorCallback) =>
+  order(query, onSuccessCallback, onErrorCallback)
 
 /**
  * @param {string} variety
  * @param {number} quantity
  * @return void
  */
-export function postOrder(variety, quantity) {
-  //implement the postOrder function to create a query and order
-}
+//implement the postOrder function to create a query and order
+export const postOrder = (variety, quantity) =>
+  order({ variety, quantity }, onSuccess, onError)
