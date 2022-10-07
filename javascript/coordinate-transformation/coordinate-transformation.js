@@ -14,9 +14,7 @@
  * @returns {function} a function which takes an x, y parameter, returns the
  *  translated coordinate pair in the form [x, y]
  */
-export const translate2d = (dx, dy) => {
-  throw new Error('Implement the translate2d function')
-}
+export const translate2d = (dx, dy) => (x, y) => [dx + x, dy + y]
 
 /**
  * Create a function that returns a function making use of a closure to
@@ -28,9 +26,7 @@ export const translate2d = (dx, dy) => {
  * @returns {function} a function which takes an x, y parameter, returns the
  *  scaled coordinate pair in the form [x, y]
  */
-export const scale2d = (sx, sy) => {
-  throw new Error('Implement the scale2d function')
-}
+export const scale2d = (sx, sy) => (x, y) => [sx * x, sy * y]
 
 /**
  * Create a composition function that returns a function that combines two
@@ -42,9 +38,7 @@ export const scale2d = (sx, sy) => {
  * @returns {function} a function which takes an x, y parameter, returns the
  *  transformed coordinate pair in the form [x, y]
  */
-export const composeTransform = (f, g) => {
-  throw new Error('Implement the composeTransform function')
-}
+export const composeTransform = (f, g) => (x, y) => g(...f(x, y))
 
 /**
  * Return a function that memoizes the last result.  If the arguments are the same as the last call,
@@ -56,5 +50,14 @@ export const composeTransform = (f, g) => {
  *  if the arguments are the same on subsequent calls, or compute a new result if they are different.
  */
 export const memoizeTransform = (f) => {
-  throw new Error('Implement the memoizeTransform function')
+  let previousX, previousY, memoizedResult
+
+  return (x, y) => {
+    if (previousX === x && previousY === y) return memoizedResult
+    previousX = x
+    previousY = y
+    memoizedResult = f(x, y)
+
+    return memoizedResult
+  }
 }
