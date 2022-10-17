@@ -4,6 +4,9 @@
 // the @ts-check directive. It will give you helpful autocompletion when
 // implementing this exercise.
 
+const isEven = (value) => value % 2 === 0
+const isOdd = (value) => value % 2 !== 0
+
 /**
  * Get the position (index) of the card in the given stack
  *
@@ -12,9 +15,7 @@
  *
  * @returns {number} position of the card in the stack
  */
-export function getCardPosition(stack, card) {
-  throw new Error('Implement the getCardPosition function');
-}
+export const getCardPosition = (stack, card) => stack.indexOf(card)
 
 /**
  * Determine if the stack contains the card
@@ -24,9 +25,7 @@ export function getCardPosition(stack, card) {
  *
  * @returns {boolean} true if card is in the stack, false otherwise
  */
-export function doesStackIncludeCard(stack, card) {
-  throw new Error('Implement the doesStackIncludeCard function');
-}
+export const doesStackIncludeCard = (stack, card) => stack.includes(card)
 
 /**
  * Determine if each card is even
@@ -35,9 +34,7 @@ export function doesStackIncludeCard(stack, card) {
  *
  * @returns {boolean} true if all cards are even, false otherwise
  */
-export function isEachCardEven(stack) {
-  throw new Error('Implement the isEachCardEven function');
-}
+export const isEachCardEven = (stack) => stack.every((card) => isEven(card))
 
 /**
  * Check if stack contains odd-value card
@@ -46,9 +43,8 @@ export function isEachCardEven(stack) {
  *
  * @returns {boolean} true if the array contains odd card, false otherwise
  */
-export function doesStackIncludeOddCard(stack) {
-  throw new Error('Implement the doesStackIncludesOddCard function');
-}
+export const doesStackIncludeOddCard = (stack) =>
+  stack.some((card) => isOdd(card))
 
 /**
  * Get the first odd card from the stack
@@ -57,9 +53,7 @@ export function doesStackIncludeOddCard(stack) {
  *
  * @returns {number | undefined} the first odd value
  */
-export function getFirstOddCard(stack) {
-  throw new Error('Implement the getFirstOddCard function');
-}
+export const getFirstOddCard = (stack) => stack.find((card) => isOdd(card))
 
 /**
  * Determine the position of the first card that is even
@@ -68,6 +62,5 @@ export function getFirstOddCard(stack) {
  *
  * @returns {number} position of the first card that is even
  */
-export function getFirstEvenCardPosition(stack) {
-  throw new Error('Implement the getFirstEvenCardPosition function');
-}
+export const getFirstEvenCardPosition = (stack) =>
+  stack.findIndex((card) => isEven(card))
