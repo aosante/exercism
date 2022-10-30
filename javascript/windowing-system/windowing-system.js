@@ -37,6 +37,7 @@ export class ProgramWindow {
     const maxWidth = this.screenSize.width - this.position.x
     const maxHeight = this.screenSize.height - this.position.y
 
+    // Math.max with a 1 accounts for the negative width/height value restrictions (same in move() with the 0)
     const newWidth = Math.max(1, Math.min(newSize.width, maxWidth))
     const newHeight = Math.max(1, Math.min(newSize.height, maxHeight))
 
