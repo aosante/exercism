@@ -31,7 +31,6 @@ export const rows = (numberOfRows) => {
         for (let j = 0; j < previousRow.length; j++) {
           if (previousRow[j - 1] === undefined) {
             newRow.push(1)
-            newRow
           } else {
             newRow.push(previousRow[j] + previousRow[j - 1])
           }
