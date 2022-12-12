@@ -45,10 +45,14 @@ export function monitorTheMachine(actions) {
   try {
     actions.check()
   } catch (error) {
-    if (error instanceof ArgumentError) actions.alertDeadSensor()
+    if (error instanceof ArgumentError)
+      actions.alertDeadSensor()
     else if (error instanceof OverheatingError) {
-      if (error.temperature < 600) actions.alertOverheating()
-      else actions.shutdown()
-    } else throw error
+      if (error.temperature < 600)
+        actions.alertOverheating()
+      else
+        actions.shutdown()
+    } else
+      throw error
   }
 }
