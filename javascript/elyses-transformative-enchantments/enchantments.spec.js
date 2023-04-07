@@ -100,7 +100,7 @@ describe('sandwichTrick', () => {
   })
 })
 
-describe.skip('twoIsSpecial', () => {
+describe('twoIsSpecial', () => {
   test('keeps only the 2s', () => {
     const deck = [1, 2, 9, 1, 2, 2, 6, 7]
     const expected = [2, 2, 2]
@@ -116,7 +116,7 @@ describe.skip('twoIsSpecial', () => {
   })
 })
 
-describe.skip('perfectlyOrdered', () => {
+describe('perfectlyOrdered', () => {
   test('sorts the cards lowest to highest', () => {
     const deck = [2, 1, 6, 9, 3]
     const expected = [1, 2, 3, 6, 9]
@@ -140,7 +140,7 @@ describe.skip('perfectlyOrdered', () => {
   })
 })
 
-describe.skip('reorder', () => {
+describe('reorder', () => {
   test('reorders the deck', () => {
     const deck = [2, 1, 6, 9, 3]
     const expected = [3, 9, 6, 1, 2]

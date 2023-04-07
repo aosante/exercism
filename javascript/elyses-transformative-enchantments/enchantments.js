@@ -60,9 +60,7 @@ export const sandwichTrick = (deck) => {
  * @returns {number[]} deck with only 2s
  */
 // @ts-ignore
-export const twoIsSpecial = (deck) => {
-  throw new Error('Implement the twoIsSpecial function')
-}
+export const twoIsSpecial = (deck) => deck.filter((card) => card === 2)
 
 /**
  * Returns a perfectly order deck from lowest to highest.
@@ -72,9 +70,7 @@ export const twoIsSpecial = (deck) => {
  * @returns {number[]} ordered deck
  */
 // @ts-ignore
-export const perfectlyOrdered = (deck) => {
-  throw new Error('Implement the perfectlyOrdered function')
-}
+export const perfectlyOrdered = (deck) => deck.sort((a, b) => a - b)
 
 /**
  * Reorders the deck so that the top card ends up at the bottom.
@@ -84,6 +80,4 @@ export const perfectlyOrdered = (deck) => {
  * @returns {number[]} reordered deck
  */
 // @ts-ignore
-export const reorder = (deck) => {
-  throw new Error('Implement the reorder function')
-}
+export const reorder = (deck) => deck.reverse()
