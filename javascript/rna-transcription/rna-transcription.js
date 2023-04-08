@@ -16,7 +16,4 @@ const dnaToRnaMap = {
  * @returns {string} the dna's rna transcription sequence
  */
 export const toRna = (dnaSequence) =>
-  dnaSequence
-    .split('')
-    .map((nucleotide) => dnaToRnaMap[nucleotide])
-    .join('')
+  [...dnaSequence].map((nucleotide) => dnaToRnaMap[nucleotide]).join('')
