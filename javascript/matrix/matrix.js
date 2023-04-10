@@ -18,3 +18,12 @@ export class Matrix {
     )
   }
 }
+
+// Another implementation for obtaining the columns
+//  let columns = []
+//   rows[0].forEach((_, rowIndex) => {
+//     column = rows.map((row) => row[rowIndex])
+//     columns.push(column)
+//   })
+
+//   return columns
