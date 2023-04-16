@@ -3,9 +3,9 @@
 // convenience to get you started writing code faster.
 //
 
-const SOUND_FOR_THREE = 'Pling'
-const SOUND_FOR_FIVE = 'Plang'
-const SOUND_FOR_SEVEN = 'Plong'
+const PLING = 'Pling'
+const PLANG = 'Plang'
+const PLONG = 'Plong'
 
 const isMultipleOf = (number, ...factors) =>
   factors.every((factor) => number % factor === 0)
@@ -17,17 +17,17 @@ const isMultipleOf = (number, ...factors) =>
  */
 export const convert = (number) =>
   isMultipleOf(number, 3, 5, 7)
-    ? `${SOUND_FOR_THREE}${SOUND_FOR_FIVE}${SOUND_FOR_SEVEN}`
+    ? `${PLING}${PLANG}${PLONG}`
     : isMultipleOf(number, 3, 5)
-    ? `${SOUND_FOR_THREE}${SOUND_FOR_FIVE}`
+    ? `${PLING}${PLANG}`
     : isMultipleOf(number, 5, 7)
-    ? `${SOUND_FOR_FIVE}${SOUND_FOR_SEVEN}`
+    ? `${PLANG}${PLONG}`
     : isMultipleOf(number, 3, 7)
-    ? `${SOUND_FOR_THREE}${SOUND_FOR_SEVEN}`
+    ? `${PLING}${PLONG}`
     : isMultipleOf(number, 3)
-    ? SOUND_FOR_THREE
+    ? PLING
     : isMultipleOf(number, 5)
-    ? SOUND_FOR_FIVE
+    ? PLANG
     : isMultipleOf(number, 7)
-    ? SOUND_FOR_SEVEN
+    ? PLONG
     : String(number)
