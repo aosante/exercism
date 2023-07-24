@@ -1,21 +1,10 @@
 {
-  "authors": [
-    "rishiosaur",
-    "SleeplessByte"
-  ],
-  "contributors": [
-    "junedev"
-  ],
+  "authors": ["rishiosaur", "SleeplessByte"],
+  "contributors": ["junedev"],
   "files": {
-    "solution": [
-      "enchantments.js"
-    ],
-    "test": [
-      "enchantments.spec.js"
-    ],
-    "exemplar": [
-      ".meta/exemplar.js"
-    ]
+    "solution": ["enchantments.js"],
+    "test": ["enchantments.spec.js"],
+    "exemplar": [".meta/exemplar.js"]
   },
   "icon": "elyses-enchantments",
   "blurb": "Sift through Elyse's array of cards using various looping methods.",
