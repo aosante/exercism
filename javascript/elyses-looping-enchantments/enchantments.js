@@ -9,7 +9,7 @@
  * @returns {number} number of cards of a single type there are in the deck
  */
 export const cardTypeCheck = (stack, card) => {
-  let sum =  0;
+  let sum = 0;
   stack.forEach((card_) => card_ === card && sum++);
 
   return sum;
